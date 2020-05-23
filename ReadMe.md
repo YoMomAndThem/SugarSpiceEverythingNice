@@ -1,6 +1,6 @@
 ## PIP Installation
 
-# Do I need to install pip?
+### Do I need to install pip?
 
 pip is already installed if you are using Python 2 >=2.7.9 or Python 3 >=3.4 downloaded from python.org or if you are working in a Virtual Environment created by virtualenv or pyvenv. Just make sure to upgrade pip.
 
