@@ -1,4 +1,4 @@
-Installation
+PIP Installation
 
 Do I need to install pip?
 
@@ -14,6 +14,7 @@ Then run the following command in the folder where you have downloaded get-pip.p
 
 python get-pip.py
 
-Install to the user site 3:
+Install to the user site:
 
 python get-pip.py --user
+
