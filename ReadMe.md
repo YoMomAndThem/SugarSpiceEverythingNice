@@ -1,27 +1,14 @@
-## PIP Installation
+## POD2 Danger-Zone
 
-### Do I need to install pip?
+### Instructions
 
-pip is already installed if you are using Python 2 >=2.7.9 or Python 3 >=3.4 downloaded from python.org or if you are working in a Virtual Environment created by virtualenv or pyvenv. Just make sure to upgrade pip.
+Each folder consist of a different kind of tool.  Within these folders are also the instructions for you to be able to use these different tools.  
 
-## Installing with get-pip.py
+## Accessibility
 
-To install pip, securely 1 download get-pip.py by following this link: get-pip.py. Alternatively, use curl:
+If you want access to add tools just ask.  This repository is private and for our eyes only.  Please do not share this with anyone outside of our pod.
 
-    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+## Files Folder
 
-Then run the following command in the folder where you have downloaded get-pip.py:
+This folder is for files shared for our pod we can upload whatever files we want to access them from any computer.
 
-    python get-pip.py
-
-Install to the user site:
-
-    python get-pip.py --user
-
-## Update .bashrc
-
-    sudo nano .bashrc
-
-add to the EOF
-
-    export PATH="/home/dm/.local/bin:$PATH"
