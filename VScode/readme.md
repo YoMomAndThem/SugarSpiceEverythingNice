@@ -19,7 +19,7 @@ To test your system, install the hello-world snap and make sure it runs correctl
     $ snap install hello-world
     hello-world 6.3 from Canonical✓ installed
   
-    $ hello-world
+    $ snap run hello-world
     Hello World!
 
 Snap is now installed and ready to go! If you’re using a desktop, a great next step is to install the Snap Store app.
@@ -35,3 +35,9 @@ Get it from the Snap Store
 
 Once installed, the Snap daemon will take care of automatically updating VS Code in the background. 
 You will get an in-product update notification whenever a new update is available.
+
+## Run command
+
+    snap run code
+
+This will run VScode.
