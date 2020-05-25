@@ -18,3 +18,10 @@ Install to the user site:
 
     python get-pip.py --user
 
+## Update .bashrc
+
+    sudo nano .bashrc
+
+add to the EOF
+
+    export PATH="/home/dm/.local/bin:$PATH"
