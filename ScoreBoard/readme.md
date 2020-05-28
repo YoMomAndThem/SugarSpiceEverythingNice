@@ -24,9 +24,9 @@
 
 ## Things that need to be checked
 
-[-] The forward slash after login? is it login.php? or just /login/
+[checkbox:unchecked] The forward slash after login? is it login.php? or just /login/
 
-[-] Is the cookie security being posted? If so, what is the value?
+[checkbox:unchecked] Is the cookie security being posted? If so, what is the value?
 
 
 ## Tools for analysis
