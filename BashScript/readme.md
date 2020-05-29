@@ -1,5 +1,5 @@
 # Menu bash script
-  * open file 
+  * open pracex.sh file 
   * click on raw
   * ctrl + a / ctrl+cmd to select all
   * right click and copy
