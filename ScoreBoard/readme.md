@@ -54,7 +54,9 @@
 
 * Redirect parameter is the same as view parameter which loads the new page.
 
-* Attempt to traverse the directory for example ../../../var/log/apache2/access.log
+* Attempt to traverse the directory for example:
+      
+      ../../../var/log/apache2/access_log
 
 * With payload to execute commands:
 
