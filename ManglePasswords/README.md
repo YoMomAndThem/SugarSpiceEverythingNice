@@ -1,6 +1,5 @@
 
 Password Guessing – Mangle a Custom Wordlist with CeWL and Hashcat
-April 26, 2018karimlalji	
 
 I’ve been seeing some questions about how to build wordlists for password attacks and those are, 1) how do I build a custom word list and, 2) how do I mangle an existing word list… both can be easily answered and accomplished with ready made tools.
 
