@@ -24,5 +24,3 @@ We could mangle that wordlist with Hashcat as follows:
  hashcat --stdout --rules-file /usr/share/hashcat/rules/best64.rule client123pass.txt | uniq -u >> client123mangleuniq.txt 
 
 Alright, so the (–stdout) tells hashcat to output every password it mangles to the terminal, (–rule-file) tells it to read a rule file from disk, and in this example we use the built-in best64 rule but you can use a different one, we then provide the password file we generated using CeWL. The output of hashcat is then piped (|) to the uniq function which removes duplicates (no need to try and guess the same password twice) and then writes all the entries to a new file called client123mangleuniq.txt
-
-Report this ad
